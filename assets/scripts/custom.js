@@ -93,7 +93,9 @@
          d3.select(this).attr("fill", "navy");  
          //console.log("Bye there", this);
          var rect = d3.select(this);
-         rect.attr("class", "mouseout");
+         tooltip.transition()
+          .duration(500)
+          .style("opacity", 0);
       })      
 
 
