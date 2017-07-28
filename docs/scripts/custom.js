@@ -22,7 +22,7 @@
       .text(json.description);
 
 
-    var tooltip = d3.select(".content-container").append("h3")
+    var tooltip = d3.select(".content-container").append("p")
       .attr("class", "tooltip")
       .style("opacity", 0);   
 
@@ -72,10 +72,8 @@
       //ON HOVER FUNCTIONS
 
       .on("mouseover", function(d){      
-         d3.select(this).attr("fill", "red");  
-         //console.log("Hello there", this);
+         d3.select(this).attr("fill", "red");
          var rect = d3.select(this);
-         rect.attr("class", "mouseover");
          var currentDateTime = new Date(d[0]);
          var year = currentDateTime.getFullYear();
          var month = currentDateTime.getMonth();
@@ -90,8 +88,7 @@
       })
 
       .on("mouseout", function(d){      
-         d3.select(this).attr("fill", "navy");  
-         //console.log("Bye there", this);
+         d3.select(this).attr("fill", "navy"); 
          var rect = d3.select(this);
          tooltip.transition()
           .duration(500)
